@@ -1,7 +1,21 @@
+import React, { useState } from 'react';
+
 function App() {
+
+  function renderSquare(){
+    return (
+        <button className="square" onClick={() => {}}>
+          value
+        </button>
+    )
+  }
+
   return (
-    <div className="App">
+    <div>
       <h1>Tic Tac Toe</h1>
+      <div className="board">
+        {renderSquare()}
+      </div>
     </div>
   );
 }
