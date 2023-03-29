@@ -15,6 +15,14 @@ function App() {
       <h1>Tic Tac Toe</h1>
       <div className="board">
         {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
+        {renderSquare()}
       </div>
     </div>
   );
