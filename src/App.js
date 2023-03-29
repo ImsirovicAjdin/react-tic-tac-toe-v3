@@ -12,7 +12,7 @@ function App() {
   function renderSquare(index){
     return (
         <button className="square" onClick={() => handleClick(index)}>
-          {board[index] + 'a'}
+          {board[index]}
         </button>
     )
   }
@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <h1>Tic Tac Toe</h1>
-      <h2>{board.toString()}</h2>
+      <h2>Status message</h2>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
