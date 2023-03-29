@@ -27,7 +27,7 @@ function App() {
 
   function resetGame() {
     setBoard(emptyBoard);
-    console.log(`setPlayer('X')`);
+    setPlayer('X');
     console.log(`setWinner(null)`);
   }
 
