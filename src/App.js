@@ -7,7 +7,7 @@ function App() {
   function renderSquare(index){
     return (
         <button className="square" onClick={() => {}}>
-          {index + 'a'}
+          {board[index] + 'a'}
         </button>
     )
   }
