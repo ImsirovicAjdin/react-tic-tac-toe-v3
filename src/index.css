@@ -28,3 +28,18 @@ body {
 .square:focus {
   outline: none;
 }
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #3e8e41;
+}

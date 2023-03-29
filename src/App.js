@@ -10,6 +10,12 @@ function App() {
     )
   }
 
+  function resetGame() {
+    console.log(`setBoard(emptyBoard)`);
+    console.log(`setPlayer('X')`);
+    console.log(`setWinner(null)`);
+  }
+
   return (
     <div>
       <h1>Tic Tac Toe</h1>
@@ -24,6 +30,9 @@ function App() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button className="reset-button" onClick={resetGame}>
+        Reset
+      </button>
     </div>
   );
 }
