@@ -17,7 +17,13 @@ function calculateWinner(squares) {
     const [a,b,c] = WINNING_COMBINATIONS[i];
     console.warn(a,b,c);
     console.log(squares[a], squares[b], squares[c]);
+
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      console.log('All three are the same!', squares[a]);
+      return squares[a];
+    }
   }
+  return null;
 }
 
 function App() {
