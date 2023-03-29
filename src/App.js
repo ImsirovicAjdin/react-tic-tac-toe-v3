@@ -4,9 +4,16 @@ const emptyBoard = Array(9).fill(null);
 
 function App() {
   const [board, setBoard] = useState(emptyBoard);
+  const [player, setPlayer] = useState('X');
 
   function handleClick(index) {
     console.log(index);
+    const newBoard = [...board];
+    if (board[index] === null) {
+      newBoard[index] = player;
+      console.log(newBoard[index]);
+      setBoard(newBoard);
+    }
   }
 
   function renderSquare(index){
