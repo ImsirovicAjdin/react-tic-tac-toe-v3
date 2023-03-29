@@ -4,9 +4,14 @@ const emptyBoard = Array(9).fill(null);
 
 function App() {
   const [board, setBoard] = useState(emptyBoard);
+
+  function handleClick(index) {
+    console.log(index);
+  }
+
   function renderSquare(index){
     return (
-        <button className="square" onClick={() => {}}>
+        <button className="square" onClick={handleClick(index)}>
           {board[index] + 'a'}
         </button>
     )
