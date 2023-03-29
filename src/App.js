@@ -13,6 +13,7 @@ function App() {
       newBoard[index] = player;
       console.log(newBoard[index]);
       setBoard(newBoard);
+      setPlayer(player === 'X' ? 'O' : 'X');
     }
   }
 
