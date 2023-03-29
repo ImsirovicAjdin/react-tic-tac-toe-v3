@@ -1,6 +1,23 @@
 import React, { useState } from 'react';
 
 const emptyBoard = Array(9).fill(null);
+const WINNING_COMBINATIONS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
+function calculateWinner(squares) {
+  for (let i = 0; i < WINNING_COMBINATIONS.length; i++) {
+    const [a,b,c] = WINNING_COMBINATIONS[i];
+    console.warn(a,b,c);
+  }
+}
 
 function App() {
   const [board, setBoard] = useState(emptyBoard);
@@ -14,6 +31,8 @@ function App() {
       console.log(newBoard[index]);
       setBoard(newBoard);
       setPlayer(player === 'X' ? 'O' : 'X');
+
+      calculateWinner(newBoard);
     }
   }
 
