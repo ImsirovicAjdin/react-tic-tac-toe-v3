@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
-function App() {
+const emptyBoard = Array(9).fill(null);
 
+function App() {
+  const [board, setBoard] = useState(emptyBoard);
   function renderSquare(index){
     return (
         <button className="square" onClick={() => {}}>
-          {index}
+          {index + 'a'}
         </button>
     )
   }
 
   function resetGame() {
-    console.log(`setBoard(emptyBoard)`);
+    setBoard(emptyBoard);
     console.log(`setPlayer('X')`);
     console.log(`setWinner(null)`);
   }
@@ -19,6 +21,7 @@ function App() {
   return (
     <div>
       <h1>Tic Tac Toe</h1>
+      <h2>{board.toString()}</h2>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
