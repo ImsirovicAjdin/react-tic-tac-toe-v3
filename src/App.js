@@ -15,11 +15,7 @@ const WINNING_COMBINATIONS = [
 function calculateWinner(squares) {
   for (let i = 0; i < WINNING_COMBINATIONS.length; i++) {
     const [a,b,c] = WINNING_COMBINATIONS[i];
-    console.warn(a,b,c);
-    console.log(squares[a], squares[b], squares[c]);
-
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      console.log('All three are the same!', squares[a]);
       return squares[a];
     }
   }
@@ -32,16 +28,13 @@ function App() {
   const [winner, setWinner] = useState(null);
 
   function handleClick(index) {
-    console.log(index);
     const newBoard = [...board];
     if (board[index] === null && !winner) {
       newBoard[index] = player;
-      console.log(newBoard[index]);
       setBoard(newBoard);
       setPlayer(player === 'X' ? 'O' : 'X');
 
       const winner = calculateWinner(newBoard);
-
       if (winner) {
         setWinner(winner);
       } else if (!newBoard.includes(null)) {
@@ -74,7 +67,7 @@ function App() {
   return (
     <div>
       <h1>Tic Tac Toe</h1>
-      <h2>Status message: {status}</h2>
+      <h2>{status}</h2>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
