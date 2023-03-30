@@ -34,7 +34,7 @@ function App() {
   function handleClick(index) {
     console.log(index);
     const newBoard = [...board];
-    if (board[index] === null) {
+    if (board[index] === null && !winner) {
       newBoard[index] = player;
       console.log(newBoard[index]);
       setBoard(newBoard);
