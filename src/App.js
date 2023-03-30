@@ -86,9 +86,11 @@ function App() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
-      <button className="reset-button" onClick={resetGame}>
-        Reset
-      </button>
+      {winner && (
+        <button className="reset-button" onClick={resetGame}>
+          Reset
+        </button>
+      )}
     </div>
   );
 }
