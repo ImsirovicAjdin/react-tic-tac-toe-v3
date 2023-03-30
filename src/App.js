@@ -29,6 +29,7 @@ function calculateWinner(squares) {
 function App() {
   const [board, setBoard] = useState(emptyBoard);
   const [player, setPlayer] = useState('X');
+  const [winner, setWinner] = useState(null);
 
   function handleClick(index) {
     console.log(index);
@@ -39,8 +40,21 @@ function App() {
       setBoard(newBoard);
       setPlayer(player === 'X' ? 'O' : 'X');
 
-      calculateWinner(newBoard);
+      const winner = calculateWinner(newBoard);
+
+      if (winner) {
+        setWinner(winner);
+      } else if (!newBoard.includes(null)) {
+        setWinner('draw');
+      }
     }
+  }
+
+  let status;
+  if (winner) {
+    status = `Winner: ${winner}`;
+  } else {
+    status = `Next player: ${player}`;
   }
 
   function renderSquare(index){
@@ -54,13 +68,13 @@ function App() {
   function resetGame() {
     setBoard(emptyBoard);
     setPlayer('X');
-    console.log(`setWinner(null)`);
+    setWinner(null);
   }
 
   return (
     <div>
       <h1>Tic Tac Toe</h1>
-      <h2>Status message</h2>
+      <h2>Status message: {status}</h2>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
